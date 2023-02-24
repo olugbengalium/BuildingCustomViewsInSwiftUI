@@ -62,20 +62,17 @@ class Ring: ObservableObject {
     private var _wedgesNeedUpdate = false
 
     /// The display order of the wedges.
-    private(set) var wedgeIDs = [Int]() {
+    @Published private(set) var wedgeIDs = [Int]() {
         willSet {
             objectWillChange.send()
         }
     }
 
     /// When true, periodically updates the data with random changes.
-    var randomWalk = false { didSet { updateTimer() } }
+    @Published var randomWalk = false { didSet { updateTimer() } }
 
     /// The next id to allocate.
     private var nextID = 0
-
-    /// Trivial publisher for our changes.
-    let objectWillChange = PassthroughSubject<Void, Never>()
 
     /// Adds a new wedge description to `array`.
     func addWedge(_ value: Wedge) {

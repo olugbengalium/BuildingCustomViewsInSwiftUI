@@ -7,7 +7,7 @@ The Wedge view.
 
 import SwiftUI
 
-/// A view drawing a single colored ring wedge.
+/// A view drawing a single color-filled ring wedge.
 struct WedgeView: View {
     var wedge: Ring.Wedge
 

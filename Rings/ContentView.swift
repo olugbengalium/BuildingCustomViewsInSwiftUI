@@ -53,8 +53,8 @@ struct ContentView: View {
 
         let drawnWedges = wedges.drawingGroup()
 
-        // Composite the ring of wedges under the buttons, over a white
-        // background.
+        // Composite the ring of wedges under the buttons, over a
+        // white-filled background.
 
         return drawnWedges
             .overlay(overlayContent, alignment: .topLeading)
